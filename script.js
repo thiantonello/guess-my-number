@@ -29,6 +29,10 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".message").textContent = "🎊 ¡Correct Number! 🎊";
       document.querySelector(".secret-number").textContent = secretNumber;
 
+      document.querySelector("body").style.backgroundColor = "#60b347";
+
+      document.querySelector(".secret-number").style.width = "30rem";
+
       highScore = score;
 
       document.querySelector(".highscore").textContent = highScore;
@@ -68,6 +72,8 @@ document.querySelector(".again").addEventListener("click", function () {
 
   document.querySelector(".score").textContent = score;
   document.querySelector(".message").textContent = `Start guessing...`;
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".secret-number").style.width = "15rem";
   document.querySelector(".secret-number").textContent = "?";
   document.querySelector(".guess").value = false;
   document.querySelector(".guess").textContent = "?";
