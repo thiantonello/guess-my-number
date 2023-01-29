@@ -19,10 +19,12 @@ let secretNumber = Math.trunc(Math.random() * 50) + 1;
 let score = 20;
 let highScore = 0;
 
+let gameFinished = false;
+
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
 
-  if (score > 0) {
+  if (score > 0 && !gameFinished) {
     if (!guess) {
       document.querySelector(".message").textContent = `⛔️ No number!`;
     } else if (guess === secretNumber) {
@@ -37,6 +39,8 @@ document.querySelector(".check").addEventListener("click", function () {
         highScore = score;
         document.querySelector(".highscore").textContent = highScore;
       }
+
+      gameFinished = true;
     } else if (guess > secretNumber) {
       if (guess > secretNumber + 10) {
         document.querySelector(
@@ -78,4 +82,5 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".secret-number").textContent = "?";
   document.querySelector(".guess").value = "";
   document.querySelector(".guess").textContent = "?";
+  gameFinished = false;
 });
