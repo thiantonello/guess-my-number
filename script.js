@@ -33,9 +33,10 @@ document.querySelector(".check").addEventListener("click", function () {
 
       document.querySelector(".secret-number").style.width = "30rem";
 
-      highScore = score;
-
-      document.querySelector(".highscore").textContent = highScore;
+      if (score > highScore) {
+        highScore = score;
+        document.querySelector(".highscore").textContent = highScore;
+      }
     } else if (guess > secretNumber) {
       if (guess > secretNumber + 10) {
         document.querySelector(
@@ -75,6 +76,6 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector("body").style.backgroundColor = "#222";
   document.querySelector(".secret-number").style.width = "15rem";
   document.querySelector(".secret-number").textContent = "?";
-  document.querySelector(".guess").value = false;
+  document.querySelector(".guess").value = "";
   document.querySelector(".guess").textContent = "?";
 });
