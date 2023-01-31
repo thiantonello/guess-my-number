@@ -1,20 +1,5 @@
 "use strict";
 
-/*
-console.log(document.querySelector(".message").textContent);
-console.log(document.querySelector(".score").textContent);
-console.log(document.querySelector(".highscore").textContent);
-
-document.querySelector(".message").textContent = "🎊 ¡Correct Number! 🎊";
-
-document.querySelector(".secret-number").textContent = 50;
-document.querySelector(".score").textContent = 95;
-document.querySelector(".highscore").textContent = 999;
-
-document.querySelector(".guess").value = 23;
-console.log(document.querySelector(".guess").value);
-*/
-
 let secretNumber = generateSecretNumber();
 let score = 20;
 let highScore = 0;
