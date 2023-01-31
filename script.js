@@ -72,17 +72,19 @@ document.querySelector(".check").addEventListener("click", function () {
 });
 
 document.querySelector(".again").addEventListener("click", function () {
+  gameFinished = false;
   secretNumber = generateSecretNumber();
   score = 20;
 
-  document.querySelector(".score").textContent = score;
-  displayMessage("Start guessing...");
   document.querySelector("body").style.backgroundColor = "#222";
   document.querySelector(".secret-number").style.width = "15rem";
+
   document.querySelector(".secret-number").textContent = "?";
+  document.querySelector(".score").textContent = score;
   document.querySelector(".guess").value = "";
   document.querySelector(".guess").textContent = "?";
-  gameFinished = false;
+
+  displayMessage("Start guessing...");
 });
 
 function generateSecretNumber() {
